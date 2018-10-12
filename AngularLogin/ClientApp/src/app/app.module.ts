@@ -22,6 +22,7 @@ import { DanboardComponent } from './admin/danboard/danboard.component';
     RouterModule.forRoot([
       { path: '', component: DanboardComponent, pathMatch: 'full' },
     ])
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

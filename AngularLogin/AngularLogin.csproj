@@ -25,7 +25,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="ClientApp\src\app\admin\NewUser\" />
     <Folder Include="ClientApp\src\app\User\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\admin\Admin.css.map" />
+    <None Include="wwwroot\admin\Admin.scss" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
