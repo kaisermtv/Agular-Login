@@ -8,12 +8,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './admin/nav-menu/nav-menu.component';
 import { DanboardComponent } from './admin/danboard/danboard.component';
+import { NewUserComponent } from './admin/NewUser/new-user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
-    DanboardComponent
+    DanboardComponent,
+    NewUserComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -21,6 +23,7 @@ import { DanboardComponent } from './admin/danboard/danboard.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: DanboardComponent, pathMatch: 'full' },
+      { path: 'newuser', component: NewUserComponent },
     ])
     
   ],

@@ -25,13 +25,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ClientApp\src\app\admin\NewUser\" />
     <Folder Include="ClientApp\src\app\User\" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="wwwroot\admin\Admin.css.map" />
     <None Include="wwwroot\admin\Admin.scss" />
+    <None Include="wwwroot\fancybox\helpers\jquery.fancybox-buttons.js" />
+    <None Include="wwwroot\fancybox\helpers\jquery.fancybox-media.js" />
+    <None Include="wwwroot\fancybox\helpers\jquery.fancybox-thumbs.js" />
+    <None Include="wwwroot\fancybox\jquery.fancybox.js" />
+    <None Include="wwwroot\fancybox\jquery.fancybox.pack.js" />
+    <None Include="wwwroot\pushy\pushy.js" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
