@@ -1,15 +1,15 @@
 <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
   <div class="form-group">
-    <label for="name">Tài khoản</label>
-    <input type="text" class="form-control" id="UserName" required [(ngModel)]="model.UserName" name="UserName" #name="ngModel">
+    <label for="UserName">Tài khoản</label>
+    <input type="text" class="form-control" id="UserName" required [(ngModel)]="model.UserName" name="UserName" #UserName="ngModel">
     <div [hidden]="UserName.valid || UserName.pristine" class="alert alert-danger">
       UserName is required
     </div>
   </div>
 
   <div class="form-group">
-    <label for="name">Mật khẩu</label>
-    <input type="text" class="form-control" id="Password" required [(ngModel)]="model.Password" name="Password" #name="ngModel">
+    <label for="Password">Mật khẩu</label>
+    <input type="text" class="form-control" id="Password" required [(ngModel)]="model.Password" name="Password" #Password="ngModel">
     <div [hidden]="Password.valid || Password.pristine" class="alert alert-danger">
       Password is required
     </div>
@@ -17,13 +17,81 @@
 
 
   <div class="form-group">
-    <label for="name">Nhập lại mật khẩu</label>
-    <input type="text" class="form-control" id="RePassword" required [(ngModel)]="model.RePassword" name="RePassword" #name="ngModel">
-    <div [hidden]="RePassword.valid || RePassword.pristine" class="alert alert-danger">
+    <label for="RePassword">Nhập lại mật khẩu</label>
+    <input type="text" class="form-control" id="RePassword" required [(ngModel)]="model.RePassword" name="RePassword" #RePassword="ngModel">
+    <div [hidden]="RePassword.valid ||  RePassword.pristine" class="alert alert-danger">
       Password is required
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="Role">Quyền hạn</label>
+    <select class="form-control" id="Role" required [(ngModel)]="model.Role" name="Role" #Role="ngModel">
+      <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+    </select>
+    <div [hidden]="Role.valid || Role.pristine" class="alert alert-danger">
+      Role is required
     </div>
   </div>
 
 
   <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
 </form>
+<!--<div class="container">
+  <div [hidden]="submitted">
+    <h1>Hero Form</h1>
+    <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+      <div class="form-group">
+        <label for="username">Tài khoản</label>
+        <input type="text" class="form-control" id="username" required [(ngModel)]="model.username" name="username" #username="ngModel">
+        <div [hidden]="username.valid || username.pristine" class="alert alert-danger">
+          Name is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name" #name="ngModel">
+        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+          Name is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="alterEgo">Alter Ego</label>
+        <input type="text" class="form-control" id="alterEgo" [(ngModel)]="model.alterEgo" name="alterEgo">
+      </div>
+
+      <div class="form-group">
+        <label for="power">Hero Power</label>
+        <select class="form-control" id="power" required [(ngModel)]="model.power" name="power" #power="ngModel">
+          <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+        </select>
+        <div [hidden]="power.valid || power.pristine" class="alert alert-danger">
+          Power is required
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
+      <button type="button" class="btn btn-default" (click)="newHero(); heroForm.reset()">New Hero</button>
+    </form>
+  </div>
+
+  <div [hidden]="!submitted">
+    <h2>You submitted the following:</h2>
+    <div class="row">
+      <div class="col-xs-3">Name</div>
+      <div class="col-xs-9  pull-left">{{ model.name }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">Alter Ego</div>
+      <div class="col-xs-9 pull-left">{{ model.alterEgo }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">Power</div>
+      <div class="col-xs-9 pull-left">{{ model.power }}</div>
+    </div>
+    <br>
+    <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+  </div>
+</div>-->
